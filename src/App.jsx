@@ -786,7 +786,7 @@ export default function TaskApp() {
       // Crea utente in Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-      // ✅ SALVA I DATI UTENTE SU FIRESTORE (usando setDoc con l'UID come ID documento)
+      // ✅ Salva i dati utente su Firestore usando setDoc con UID come ID documento
       await setDoc(doc(db, 'users', userCredential.user.uid), {
         uid: userCredential.user.uid,
         name: name,
